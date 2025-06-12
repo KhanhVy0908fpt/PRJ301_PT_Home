@@ -1,1 +1,16 @@
+Todo: làm việc như DTO: khuông dữ liệu
+TođoAO: làm việc như DAO: đối tượng trong database
 
+
+
+3. Edit function: Từ list.jsp , người dùng bấm vào link "edit" . 
+  - Ở EditServlet: method GEt:  sẽ lấy id từ request --> Tạo đối tương todoDAO, gọi hàm getById trong todoDAO(hàm này trả về một đối tượng Todo)==> nên sẽ được lưu ở biến todo
+  - request.setAttribute("todo", todo) : gửi đối tượng todo với tên gọi "todo" sang cho trang được điều hướng
+  - Chuyển hướng tới: edit.jsp
+  - Ở edit.jsp: hiện ra form (form này ở từng trường dữ liệu đề có thông tin của object được chọn) 
+- sau đó để người dùng edit thông tin xong --> nhấn vào update ==> chuyển thông tin(id, name, status) về EditServlet method Post.
+- Cuổi cùng có nút "Back to list"
+
+  - Ơ Servlet MethodPOst: lấy thông tin được gửi từ request(từ form của jsp)
+  - Tạo đối tượng Todo(DTO) truyên id name status mới lấy từ request vào, và TodoDAO(DAO) ==> gọi hàm Update
+  - chuyển Hướng về list.jsp
